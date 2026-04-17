@@ -1,0 +1,40 @@
+name: Good first issue (maintainers)
+description: Scaffolded template for creating good-first-issues
+labels: ["good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template is for maintainers creating curated on-ramps for new contributors.
+        Every good-first-issue should be small, self-contained, and solvable without deep context.
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What the contributor needs to know to start.
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+      description: Concrete, scoped task. Link to the file(s) to edit.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - [ ] Tests pass
+        - [ ] Docs updated if user-facing
+        - [ ] ...
+    validations:
+      required: true
+  - type: input
+    id: mentor
+    attributes:
+      label: Mentor
+      description: GitHub handle of the maintainer available to help
+    validations:
+      required: true

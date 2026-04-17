@@ -1,0 +1,40 @@
+services:
+  api:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    container_name: a0-api
+    restart: unless-stopped
+    environment:
+      - A0_ENV=development
+      - A0_DATABASE_URL=sqlite+aiosqlite:///./data/a0.db
+      - A0_SECRET_KEY=${A0_SECRET_KEY:-dev-only-change-me}
+      - A0_WORKSPACE_DIR=/workspace
+      - A0_CORS_ORIGINS=http://localhost:4200
+    volumes:
+      - ./apps/api:/app
+      - ./workspace:/workspace
+      - api-data:/app/data
+    ports:
+      - "8000:8000"
+    command: uv run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+    container_name: a0-web
+    restart: unless-stopped
+    environment:
+      - A0_API_URL=http://localhost:8000
+    volumes:
+      - ./apps/web:/app
+      - /app/node_modules
+    ports:
+      - "4200:4200"
+    command: npm start -- --host 0.0.0.0 --poll=2000
+    depends_on:
+      - api
+
+volumes:
+  api-data:

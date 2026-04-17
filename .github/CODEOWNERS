@@ -1,0 +1,21 @@
+# CODEOWNERS for A0 for Angular
+#
+# Each line maps a path pattern to one or more reviewers. The first matching
+# pattern wins. Update this file as the team grows.
+#
+# Syntax: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner — change to your GitHub handle before the first push.
+*                           @sausi-7
+
+# Governance / legal
+/LICENSE                    @sausi-7
+/SECURITY.md                @sausi-7
+/CODE_OF_CONDUCT.md         @sausi-7
+
+# Architectural decisions require extra scrutiny
+/docs/adr/                  @sausi-7
+
+# Agent-core and schematics are the heart — lock these down
+/packages/agent-core/       @sausi-7
+/packages/ng-schematics/    @sausi-7

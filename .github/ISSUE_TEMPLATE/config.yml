@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions & discussion
+    url: https://github.com/sausi-7/a0-angular/discussions
+    about: Ask questions, share ideas, show off what you built.
+  - name: Security issues
+    url: https://github.com/sausi-7/a0-angular/blob/main/SECURITY.md
+    about: Please do not report security issues in public.

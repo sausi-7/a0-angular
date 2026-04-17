@@ -1,0 +1,47 @@
+# Generated user projects
+workspace/
+!workspace/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Node / Angular
+node_modules/
+*.log
+.angular/
+.cache/
+coverage/
+apps/web/dist/
+
+# Env
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+!.vscode/settings.json.example
+!.vscode/extensions.json
+.DS_Store
+
+# DB
+*.sqlite
+*.sqlite3
+*.db
+
+# Docker
+.docker/
