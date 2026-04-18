@@ -42,6 +42,7 @@ See [docs/architecture.md](docs/architecture.md) for the full picture. Short ver
 We want contributors from day one. Start here:
 
 - [CONTRIBUTING.md](CONTRIBUTING.md) — dev setup, PR workflow, how we review
+- [PLAN.md](PLAN.md) — phased plan with concrete epics and issues you can claim
 - [Good first issues](https://github.com/sausi-7/a0-angular/labels/good%20first%20issue) — curated on-ramps
 - [docs/adr/](docs/adr/) — architecture decisions, so you can argue with them
 

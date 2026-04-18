@@ -1,6 +1,6 @@
 # Roadmap
 
-This is a living document. The authoritative, up-to-date view is the [GitHub Project board](https://github.com/sausi-7/a0-angular/projects) — this file is the narrative version.
+This is the **narrative** view of where the project is going. For the contributor-facing plan with concrete epics, issues, and difficulty tags, see [PLAN.md](PLAN.md). The authoritative, up-to-date view is the [GitHub Project board](https://github.com/sausi-7/a0-angular/projects).
 
 ## Phase 0 — Foundation (current)
 
