@@ -10,6 +10,10 @@ uv run uvicorn app.main:app --reload
 
 API docs: `http://localhost:8000/docs`.
 
+## Demo slice
+
+The current demo path is `POST /demo/start`. It seeds `workspace/demo/` from the starter template and returns the preview port (`4300`).
+
 ## Run tests
 
 ```bash

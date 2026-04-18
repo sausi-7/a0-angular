@@ -35,6 +35,7 @@ Talks to `apps/api` over REST (project CRUD, settings) and a single WebSocket pe
 
 - Project CRUD (`/projects`, `/projects/{id}`)
 - Settings, BYOK keys (stored encrypted)
+- Demo bootstrap path (`POST /demo/start`) that seeds `workspace/demo/` from the starter template
 - WebSocket endpoint for chat: receives a prompt, kicks off the agent loop, streams back events
 - File service: reads/writes under `workspace/<project_id>/`
 - Process supervisor for the `ng serve` sidecars (one per active project)
@@ -69,7 +70,7 @@ Generated Angular projects live here, one subdirectory per project. Gitignored. 
    - Stream tokens → WS → web renders them in the chat panel.
    - When the model emits a tool call (e.g. `write_file`), the loop executes it, pushes a `file_changed` event → WS → web updates the diff view.
    - Repeat until model emits a stop signal.
-5. After the first successful `write_file`, API launches an `ng serve` sidecar against `workspace/<id>/` on a per-project port. Web's preview iframe points at it.
+5. After the first successful `write_file`, API launches an `ng serve` sidecar against `workspace/<id>/` on a per-project port. For the demo path, this is the fixed `workspace/demo/` workspace started by `POST /demo/start`. Web's preview iframe points at it.
 6. Hot-reload takes over: subsequent file changes show up in the iframe without platform involvement.
 
 ## Data
