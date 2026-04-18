@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import pytest
 from fastapi.testclient import TestClient
 
 from app.config import settings
@@ -22,7 +23,9 @@ def _collect_tree(root: Path) -> tuple[set[str], dict[str, bytes]]:
     return dirs, files
 
 
-def test_demo_start_seeds_workspace_and_is_idempotent(tmp_path: Path, monkeypatch) -> None:
+def test_demo_start_seeds_workspace_and_is_idempotent(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     starter_dir = tmp_path / "starter"
     (starter_dir / "src").mkdir(parents=True)
     (starter_dir / "src" / "app.txt").write_text("starter-content", encoding="utf-8")

@@ -10,18 +10,18 @@ router = APIRouter(prefix="/demo", tags=["demo"])
 
 
 class DemoStartResponse(BaseModel):
-	ready: bool
-	preview_port: int
+    ready: bool
+    preview_port: int
 
 
 @router.post("/start", response_model=DemoStartResponse)
 async def start_demo() -> DemoStartResponse:
-	workspace_dir = Path(settings.workspace_dir).resolve()
-	starter_dir = get_demo_starter_dir(settings.demo_starter_dir)
+    workspace_dir = Path(settings.workspace_dir).resolve()
+    starter_dir = get_demo_starter_dir(settings.demo_starter_dir)
 
-	try:
-		seed_demo_workspace(workspace_dir=workspace_dir, starter_dir=starter_dir)
-	except FileNotFoundError as exc:
-		raise HTTPException(status_code=500, detail=str(exc)) from exc
+    try:
+        seed_demo_workspace(workspace_dir=workspace_dir, starter_dir=starter_dir)
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
 
-	return DemoStartResponse(ready=True, preview_port=4300)
+    return DemoStartResponse(ready=True, preview_port=4300)
