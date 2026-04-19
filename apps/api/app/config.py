@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     database_url: str = "sqlite+aiosqlite:///./data/a0.db"
     secret_key: str = "dev-only-change-me"
     workspace_dir: str = "./workspace"
+    demo_starter_dir: str = ""
     cors_origins: str = "http://localhost:4200"
 
     @property

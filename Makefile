@@ -25,7 +25,7 @@ down: ## Stop docker compose stack
 	docker compose down
 
 test: ## Run unit tests for api and web
-	cd apps/api && uv run pytest -q
+	cd apps/api && uv run python -m pytest -q
 	cd apps/web && npm test -- --watch=false --browsers=ChromeHeadless
 
 lint: ## Run linters and type checks

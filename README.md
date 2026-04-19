@@ -31,6 +31,8 @@ make dev
 
 Then open `http://localhost:4200` for the web UI and `http://localhost:8000/docs` for the API.
 
+For the demo slice, `POST http://localhost:8000/demo/start` seeds `workspace/demo/` from the starter template and brings the preview up on port `4300`.
+
 **Prefer Docker?** `make dev-docker` runs the full stack via `docker compose` instead. Docker is optional — both paths are supported.
 
 ## Architecture
